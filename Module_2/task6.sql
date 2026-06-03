@@ -1,0 +1,9 @@
+SELECT
+    e.title,
+    r.resource_type,
+    COUNT(*) AS total_resources
+FROM Events e
+JOIN Resources r
+    ON e.event_id = r.event_id
+GROUP BY e.title,r.resource_type
+ORDER BY e.title;
